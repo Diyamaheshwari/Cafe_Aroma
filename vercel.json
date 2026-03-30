@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/menu",
+      "destination": "/menu.html"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/gallery.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/book",
+      "destination": "/book.html"
+    }
+  ]
+}
