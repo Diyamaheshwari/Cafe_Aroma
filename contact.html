@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get in touch with Café Aroma. Visit us in the city for a traditional Greek experience or contact us for inquiries and events.">
+    <title>Contact Us | Café Aroma 📍🌊</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Dynamic Header Injected by main.js -->
+        </div>
+    </header>
+
+    <main>
+        <section class="section contact-hero reveal"
+            style="background: linear-gradient(rgba(0, 30, 60, 0.75), rgba(0, 15, 35, 0.85)), url('/hero_bg.png') center/cover; padding-top: 11rem; padding-bottom: 6rem; text-align: center; color: white;">
+            <div class="container">
+                <span class="subtitle"
+                    style="color: var(--soft-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">Get
+                    in Touch</span>
+                <h1 class="serif" style="font-size: 4rem; margin-top: 0.75rem; color: white; line-height: 1.1;">Find Us
+                    in the <span style="color: var(--soft-gold); font-style: italic;">City</span></h1>
+                <p
+                    style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.8);">
+                    We’re located in the heart of downtown, offering a quiet, Aegean-inspired sanctuary for everyone who
+                    values quality and conversation.</p>
+            </div>
+        </section>
+
+        <section class="section reveal" style="padding: 6rem 0;">
+            <div class="container split-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 5rem; align-items: start;">
+                <div class="reveal">
+                    <h2 class="serif" style="font-size: 3rem;">Location & <span
+                            style="color: var(--soft-gold); font-style: italic;">Hours</span></h2>
+                    <ul class="footer-links" style="margin-top: 3rem; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 2.5rem;">
+                            <h4
+                                style="color: var(--aegean-blue); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                Address</h4>
+                            <p style="color: var(--text-light); font-size: 1.1rem;">123 Santorini Street, Downtown City,
+                                90210</p>
+                        </li>
+                        <li style="margin-bottom: 2.5rem;">
+                            <h4
+                                style="color: var(--aegean-blue); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                Phone</h4>
+                            <p style="color: var(--text-light); font-size: 1.1rem;">(123) 456-7890</p>
+                        </li>
+                        <li style="margin-bottom: 2.5rem;">
+                            <h4
+                                style="color: var(--aegean-blue); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                Email</h4>
+                            <p style="color: var(--text-light); font-size: 1.1rem;">hello@cafearoma.com</p>
+                        </li>
+                        <li>
+                            <h4
+                                style="color: var(--aegean-blue); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                                Operating Hours</h4>
+                            <p style="color: var(--text-light); font-size: 1.1rem;">Mon - Fri: 7am - 10pm</p>
+                            <p style="color: var(--text-light); font-size: 1.1rem;">Sat - Sun: 8am - 11pm</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reveal"
+                    style="background-color: var(--marble-grey); padding: 4rem; border-radius: 4px; box-shadow: var(--shadow);">
+                    <h3 class="serif" style="margin-bottom: 2.5rem; font-size: 2rem;">Send us a Message</h3>
+                    <form id="contactForm" class="res-form"
+                        style="padding: 0; box-shadow: none; background: transparent;">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" required placeholder="John Doe"
+                                style="padding: 1rem; border-radius: 4px; border: 1px solid #ddd; width: 100%;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" required placeholder="john@example.com"
+                                style="padding: 1rem; border-radius: 4px; border: 1px solid #ddd; width: 100%;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" rows="4" required placeholder="How can we help?"
+                                style="padding: 1rem; border-radius: 4px; border: 1px solid #ddd; width: 100%;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; padding: 1rem 0; font-size: 1.1rem; border-radius: 4px;">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- Dynamic Footer Injected by main.js -->
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

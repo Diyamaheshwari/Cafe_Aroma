@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover the story behind Café Aroma. Inspired by the serene beauty of Santorini and the rich traditions of Greek hospitality.">
+    <title>Our Story | Café Aroma 🏺☕</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* About Page specific animations */
+        @keyframes floatUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .about-hero-content { animation: floatUp 1s ease forwards; }
+        .drop-cap::first-letter {
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            float: left;
+            line-height: 0.75;
+            margin-right: 1rem;
+            color: var(--aegean-blue);
+            font-weight: 700;
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--soft-gold), transparent);
+        }
+        .glass-card:hover {
+            background: rgba(255,255,255,0.14);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .stat-badge {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-width: 100px;
+        }
+        .about-img-wrapper {
+            position: relative;
+        }
+        .about-img-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--soft-gold);
+            border-radius: 4px;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Dynamic Header Injected by main.js -->
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Background Image -->
+        <section class="section about-hero reveal"
+            style="background: linear-gradient(rgba(0, 40, 70, 0.72), rgba(0, 20, 45, 0.85)), url('/hero_bg.png') center/cover; padding-top: 12rem; padding-bottom: 8rem; text-align: center; color: white;">
+            <div class="about-hero-content container" style="max-width: 800px; margin: 0 auto;">
+                <span class="subtitle"
+                    style="color: var(--soft-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem;">A Journey Across the Aegean</span>
+                <h1 class="serif" style="font-size: 4.5rem; margin-top: 1rem; color: white; line-height: 1.1;">The Aroma of <span
+                        style="color: var(--soft-gold); font-style: italic;">Authenticity</span></h1>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-top: 1.5rem; line-height: 1.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    A sanctuary of Mediterranean flavors, rooted in the traditions of a culture that has been savoring life for millennia.
+                </p>
+                <!-- Stats row -->
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 4rem; flex-wrap: wrap;">
+                    <div class="stat-badge">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--aegean-blue); font-family: 'Playfair Display', serif;">12+</span>
+                        <span style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.25rem;">Recipes</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--aegean-blue); font-family: 'Playfair Display', serif;">100%</span>
+                        <span style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.25rem;">Organic</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--aegean-blue); font-family: 'Playfair Display', serif;">500+</span>
+                        <span style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.25rem;">Guests/week</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section: Editorial Layout -->
+        <section class="section reveal" style="padding: 8rem 0; background-color: var(--santorini-white);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 6rem; align-items: center;">
+                    <!-- Image with gold border effect -->
+                    <div class="about-img-wrapper reveal" style="position: relative; z-index: 1;">
+                        <div style="aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                            <img src="/src/assets/about_roaster.png" alt="Barista preparing Greek coffee"
+                                style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                        </div>
+                        <!-- Floating accent badge -->
+                        <div style="position: absolute; bottom: 2rem; left: -2rem; background: var(--aegean-blue); color: white; padding: 1.5rem 2rem; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,75,135,0.3);">
+                            <span style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; display: block; line-height: 1; color: var(--soft-gold);">2024</span>
+                            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Est.</span>
+                        </div>
+                    </div>
+                    <!-- Editorial text -->
+                    <div class="reveal">
+                        <span class="subtitle" style="color: var(--soft-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Our Story</span>
+                        <h2 class="serif" style="font-size: 3.5rem; margin: 1rem 0 2rem; line-height: 1.15; color: var(--text-dark);">Crafted with <br><span style="color: var(--soft-gold); font-style: italic;">Tradition.</span></h2>
+                        <p class="drop-cap" style="margin-bottom: 2rem; color: var(--text-light); line-height: 1.9; font-size: 1.05rem;">
+                            Founded in 2024, Café Aroma was born from a simple dream: to bring the tranquil, sun-drenched spirit of Santorini to the heart of the city.
+                        </p>
+                        <p style="margin-bottom: 2rem; color: var(--text-light); line-height: 1.9; font-size: 1.05rem;">We source our beans directly from sustainable Greek roasters who prioritize quality over quantity. Every cup is brewed using traditional methods, from the classic briki-brewed Greek coffee to our modern, velvety Freddos.</p>
+                        <p style="color: var(--text-light); line-height: 1.9; font-size: 1.05rem; margin-bottom: 2.5rem;">Our commitment extends beyond coffee. We use organic ingredients, locally sourced produce, and time-honored recipes passed down through generations of Mediterranean chefs.</p>
+                        <a href="menu.html" class="btn btn-primary" style="padding: 1rem 2.5rem; border-radius: 4px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Explore Our Menu</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section: Glassmorphism Cards -->
+        <section class="section reveal"
+            style="background: linear-gradient(135deg, #003060 0%, #001830 60%, #00263d 100%); color: white; text-align: center; padding: 8rem 2rem; position: relative; overflow: hidden;">
+            <!-- Decorative background circles -->
+            <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: rgba(212,175,55,0.06); border-radius: 50%; pointer-events: none;"></div>
+            <div style="position: absolute; bottom: -150px; right: -100px; width: 500px; height: 500px; background: rgba(0,94,166,0.1); border-radius: 50%; pointer-events: none;"></div>
+
+            <div class="container" style="position: relative; z-index: 1;">
+                <span class="subtitle" style="color: var(--soft-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">What We Believe</span>
+                <h2 class="serif" style="color: white; margin: 1rem 0 4rem; font-size: 3.5rem;">Our <span style="color: var(--soft-gold); font-style: italic;">Philosophy</span></h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: left;">
+                    <div class="glass-card reveal">
+                        <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; color: var(--soft-gold); text-transform: uppercase; margin-bottom: 1.5rem;">01</div>
+                        <h3 class="serif" style="color: white; font-size: 2rem; margin-bottom: 1rem;">Philoxenia</h3>
+                        <p style="color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.95rem;">The Greek concept of "friendliness to strangers." Everyone who crosses our threshold is not a customer—they are a beloved guest, deserving of warmth and care.</p>
+                    </div>
+                    <div class="glass-card reveal" style="transition-delay: 0.1s;">
+                        <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; color: var(--soft-gold); text-transform: uppercase; margin-bottom: 1.5rem;">02</div>
+                        <h3 class="serif" style="color: white; font-size: 2rem; margin-bottom: 1rem;">Meraki</h3>
+                        <p style="color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.95rem;">Doing something with soul, creativity, and love—leaving a piece of ourselves in every cup. From the first pour to the last sip, Meraki is our invisible ingredient.</p>
+                    </div>
+                    <div class="glass-card reveal" style="transition-delay: 0.2s;">
+                        <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; color: var(--soft-gold); text-transform: uppercase; margin-bottom: 1.5rem;">03</div>
+                        <h3 class="serif" style="color: white; font-size: 2rem; margin-bottom: 1rem;">Ousia</h3>
+                        <p style="color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.95rem;">The essence of what we do: simplicity, purity, and authentic Mediterranean soul. Excellence is not an act—it is our unwavering standard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- Dynamic Footer Injected by main.js -->
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

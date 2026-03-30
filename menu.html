@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore the full menu at Café Aroma. From signature Greek espresso and Freddos to authentic Mediterranean pastries and dishes.">
+    <title>The Full Menu | Café Aroma ☕🌊</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Dynamic Header Injected by main.js -->
+        </div>
+    </header>
+
+    <main>
+        <section class="section menu-hero reveal"
+            style="background: linear-gradient(rgba(0, 30, 60, 0.75), rgba(0, 15, 35, 0.85)), url('/hero_bg.png') center/cover; padding-top: 11rem; padding-bottom: 6rem; text-align: center; color: white;">
+            <div class="container">
+                <span class="subtitle"
+                    style="color: var(--soft-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">Taste
+                    the Aegean</span>
+                <h1 class="serif" style="font-size: 4rem; margin-top: 0.75rem; color: white; line-height: 1.1;">
+                    Experience
+                    Our <span style="color: var(--soft-gold); font-style: italic;">Menu</span></h1>
+                <p
+                    style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    Authentic Greek flavours, handcrafted with love and tradition.</p>
+
+                <div class="menu-search-container reveal"
+                    style="margin-top: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; position: relative;">
+                    <span class="search-icon" style="color: var(--aegean-blue);">🔍</span>
+                    <input type="text" class="menu-search-input" placeholder="Search for your favorite dish or drink..."
+                        style="padding: 1rem 1rem 1rem 3.5rem; border-radius: 50px; font-size: 1rem; border: none; box-shadow: 0 15px 40px rgba(0,0,0,0.3); width: 100%; background: white;">
+                </div>
+
+                <div class="menu-tabs reveal"
+                    style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <button class="tab-btn active">Coffee</button>
+                    <button class="tab-btn">Beverages</button>
+                    <button class="tab-btn">Food</button>
+                    <button class="tab-btn">Desserts</button>
+                    <button class="tab-btn">All</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" id="menu-section"
+            style="background: linear-gradient(180deg, #ededec 0%, #f5f0e8 100%); padding-top: 5rem; padding-bottom: 8rem;">
+            <div class="container">
+                <div id="menu-content">
+                    <!-- Dynamic Menu Grid Injected by main.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- Dynamic Footer Injected by main.js -->
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

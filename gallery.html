@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A visual escape to Café Aroma. Stunning views of Santorini-inspired decor and authentic Greek dishes.">
+    <title>Visual Gallery | Café Aroma 🐚📸</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Dynamic Header Injected by main.js -->
+        </div>
+    </header>
+
+    <main>
+        <section class="section gallery-hero reveal"
+            style="background: linear-gradient(rgba(0, 30, 60, 0.75), rgba(0, 15, 35, 0.85)), url('/hero_bg.png') center/cover; padding-top: 11rem; padding-bottom: 6rem; text-align: center; color: white;">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <span class="subtitle"
+                    style="color: var(--soft-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">A
+                    Visual Journey</span>
+                <h1 class="serif" style="font-size: 4rem; margin-top: 0.75rem; color: white; line-height: 1.1;">Views of
+                    <span style="color: var(--soft-gold); font-style: italic;">Santorini</span>
+                </h1>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem; color: rgba(255,255,255,0.8);">Explore
+                    a curated selection of our favourite moments—from hand-poured espressos to sun-drenched island
+                    light.</p>
+            </div>
+        </section>
+
+        <section class="section reveal"
+            style="background: linear-gradient(180deg, #fdfbf7 0%, #f9f9f9 100%); padding: 6rem 0 10rem 0;">
+            <div class="container">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; align-items: stretch;">
+                    <div class="reveal gallery-item"
+                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
+                        <img src="/coffee_item.png" alt="Signature Coffee"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    </div>
+                    <div class="reveal gallery-item"
+                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.1s;">
+                        <img src="/food_item.png" alt="Traditional Mediterranean Food"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    </div>
+                    <div class="reveal gallery-item"
+                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.2s;">
+                        <img src="/dessert_item.png" alt="Greek Dessert Baklava"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    </div>
+                    <div class="reveal gallery-item"
+                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.1s;">
+                        <img src="/src/assets/hero_bg.png" alt="Cafe Interior"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    </div>
+                    <div class="reveal gallery-item"
+                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.2s;">
+                        <img src="/src/assets/about_roaster.png" alt="Barista pouring coffee"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- Dynamic Footer Injected by main.js -->
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
