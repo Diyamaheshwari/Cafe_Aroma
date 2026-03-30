@@ -1,16 +1,1 @@
-{
-  "version": 2,
-  "name": "cafe-aroma",
-  "builds": [
-    {
-      "src": "dist/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
-    }
-  ]
-}
+{}
