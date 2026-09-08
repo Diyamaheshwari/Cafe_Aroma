@@ -34,26 +34,68 @@ const initHeader = () => {
         </nav>
     `;
 
+    // Ensure backdrop exists
+    let backdrop = document.getElementById('navBackdrop');
+    if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.id = 'navBackdrop';
+        backdrop.className = 'nav-backdrop';
+        document.body.appendChild(backdrop);
+    }
+
     // Mobile Menu Toggle Logic
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
     
+    const closeMenu = () => {
+        if (navLinks) navLinks.classList.remove('nav-active');
+        if (mobileToggle) {
+            mobileToggle.classList.remove('toggle-active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    };
+
+    const openMenu = () => {
+        if (navLinks) navLinks.classList.add('nav-active');
+        if (mobileToggle) {
+            mobileToggle.classList.add('toggle-active');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+        }
+        if (backdrop) backdrop.classList.add('active');
+        document.body.classList.add('no-scroll');
+    };
+
     if (mobileToggle && navLinks) {
+        mobileToggle.setAttribute('aria-expanded', 'false');
         mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('nav-active');
-            mobileToggle.classList.toggle('toggle-active');
-            document.body.classList.toggle('no-scroll');
+            const isOpen = navLinks.classList.contains('nav-active');
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Close menu on backdrop click
+        if (backdrop) {
+            backdrop.addEventListener('click', closeMenu);
+        }
+
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('nav-active')) {
+                closeMenu();
+            }
         });
 
         // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('nav-active');
-                mobileToggle.classList.remove('toggle-active');
-                document.body.classList.remove('no-scroll');
-            });
+            link.addEventListener('click', closeMenu);
         });
     }
+
 
     // Handle Scroll Transitions
     window.addEventListener('scroll', () => {

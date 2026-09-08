@@ -12,7 +12,26 @@
   --glass-bg: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(255, 255, 255, 0.2);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  /* Fluid Typography Clamps for All Device Screen Sizes */
+  --fs-h1: clamp(2.2rem, 5.5vw + 1rem, 4.5rem);
+  --fs-h2: clamp(1.8rem, 4vw + 0.8rem, 3.5rem);
+  --fs-h3: clamp(1.3rem, 2.5vw + 0.5rem, 2rem);
+  --fs-sub: clamp(0.8rem, 1.2vw + 0.4rem, 1rem);
+  --fs-body: clamp(0.95rem, 1vw + 0.5rem, 1.15rem);
+
+  /* Fluid Spacing */
+  --section-padding: clamp(3.5rem, 8vw, 8rem);
+  --hero-pt: clamp(7rem, 12vw, 12rem);
+  --hero-pb: clamp(4rem, 8vw, 8rem);
+
+  /* Safe Area Insets for iOS Notch / Dynamic Island */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
 }
+
 
 /* Card hover lift + image zoom effects */
 .card:hover {
@@ -91,16 +110,82 @@ ul {
   list-style: none;
 }
 
-/* Layout Utilities */
+/* Layout Utilities & Safe Areas */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-left: max(1.25rem, var(--sal));
+  padding-right: max(1.25rem, var(--sar));
+  width: 100%;
 }
 
 .section {
-  padding: 5rem 0;
+  padding: var(--section-padding) 0;
 }
+
+/* iOS Safari Automatic Zoom Fix */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="time"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Responsive Headings & Fluid Typography */
+.hero-title {
+  font-size: var(--fs-h1) !important;
+  line-height: 1.1;
+}
+
+.section-title {
+  font-size: var(--fs-h2) !important;
+  line-height: 1.2;
+}
+
+.card-title {
+  font-size: var(--fs-h3) !important;
+}
+
+/* Dynamic Responsive Grids */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.split-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(2.5rem, 5vw, 6rem);
+  align-items: center;
+}
+
+/* Mobile Menu Backdrop Overlay */
+.nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(0, 20, 45, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.nav-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 .btn {
   display: inline-block;
@@ -487,10 +572,11 @@ footer::before {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 3rem 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: clamp(2rem, 4vw, 3.5rem);
   margin-top: 3rem;
 }
+
 
 @media (max-width: 768px) {
   .menu-grid {
