@@ -135,7 +135,7 @@ const initFooter = () => {
         <div class="footer-grid">
             <div class="footer-section">
                 <h3 class="footer-logo">Café Aroma</h3>
-                <p style="color: var(--text-light); max-width: 300px;">A sanctuary of Mediterranean flavors and Santorini vibes. Join us for a journey of handcrafted coffee and authentic meals.</p>
+                <p style="color: var(--text-light); max-width: 280px; font-size: 0.85rem; line-height: 1.5;">A sanctuary of Mediterranean flavors and Santorini vibes. Join us for a journey of handcrafted coffee and authentic meals.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon">IG</a>
                     <a href="#" class="social-icon">FB</a>
@@ -163,13 +163,14 @@ const initFooter = () => {
             </div>
             <div class="footer-section">
                 <h4>Newsletter</h4>
-                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Join our community for exclusive offers and events.</p>
-                <form id="newsletterForm" style="display: flex; gap: 0.5rem;">
-                    <input type="email" placeholder="Email Address" required style="flex: 1; padding: 0.6rem; border: 1px solid #ddd; border-radius: 4px;">
-                    <button type="submit" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.8rem;">JOIN</button>
+                <p style="font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.6rem;">Join our community for exclusive offers and events.</p>
+                <form id="newsletterForm" style="display: flex; gap: 0.4rem;">
+                    <input type="email" placeholder="Email Address" required style="flex: 1; padding: 0.45rem 0.6rem; font-size: 0.82rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <button type="submit" class="btn btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.75rem;">JOIN</button>
                 </form>
             </div>
         </div>
+
         <div class="copyright">
             &copy; 2026 Café Aroma. All rights reserved. | Designed with ❤️ in Greek Style.
         </div>
