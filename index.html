@@ -12,12 +12,26 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description"
         content="Experience the authentic taste of Santorini at Café Aroma. Finest Greek coffee, traditional Mediterranean dishes, and a serene atmosphere.">
+    <meta name="keywords" content="Café Aroma, Greek Coffee, Santorini Cafe, Mediterranean Dining, Bakery, Table Booking, Greek Dishes">
+    <link rel="canonical" href="https://cafearoma.com/">
+    
+    <!-- OpenGraph / Social Meta Tags -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Café Aroma Santorini">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://cafearoma.com/">
     <meta property="og:title" content="Café Aroma | Authentic Greek Coffee & Mediterranean Dining">
     <meta property="og:description" content="Experience the authentic taste of Santorini at Café Aroma. Finest Greek coffee, traditional Mediterranean dishes, and a serene atmosphere.">
     <meta property="og:image" content="/src/assets/hero_bg.png">
+    
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <title>Café Aroma | Authentic Greek Coffee & Mediterranean Dining ☕🌊</title>
+    <meta name="twitter:title" content="Café Aroma | Authentic Greek Coffee & Mediterranean Dining">
+    <meta name="twitter:description" content="Experience the authentic taste of Santorini at Café Aroma. Finest Greek coffee, traditional Mediterranean dishes, and a serene atmosphere.">
+    <meta name="twitter:image" content="/src/assets/hero_bg.png">
+    
+    <!-- Performance Preloads & Preconnects -->
+    <link rel="preload" as="image" href="/src/assets/hero_bg.png" fetchpriority="high">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +39,37 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
+        
+    <!-- Structured Data (JSON-LD) for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Café Aroma Santorini",
+      "image": "https://cafearoma.com/src/assets/hero_bg.png",
+      "url": "https://cafearoma.com",
+      "telephone": "+30-22860-00000",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Santorini Street",
+        "addressLocality": "Santorini",
+        "addressCountry": "GR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.3932,
+        "longitude": 25.4615
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "23:00"
+      },
+      "servesCuisine": ["Greek", "Mediterranean", "Coffee", "Baklava", "Pastries"]
+    }
+    </script>
 </head>
 
 <body>
