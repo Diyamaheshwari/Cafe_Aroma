@@ -18,6 +18,7 @@
     <meta property="og:image" content="/coffee_item.png">
     <meta name="twitter:card" content="summary_large_image">
     <title>Visual Gallery | Café Aroma 🐚📸</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,49 +35,52 @@
     </header>
 
     <main>
-        <section class="section gallery-hero reveal"
-            style="background: linear-gradient(rgba(0, 30, 60, 0.75), rgba(0, 15, 35, 0.85)), url('/hero_bg.png') center/cover; padding-top: var(--hero-pt); padding-bottom: var(--hero-pb); text-align: center; color: white;">
-            <div class="container" style="max-width: 800px; margin: 0 auto;">
-                <span class="subtitle"
-                    style="color: var(--soft-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">A
-                    Visual Journey</span>
-                <h1 class="serif hero-title" style="margin-top: 0.75rem; color: white;">Views of
-                    <span style="color: var(--soft-gold); font-style: italic;">Santorini</span>
-                </h1>
-                <p style="font-size: var(--fs-body); line-height: 1.8; margin-top: 1rem; color: rgba(255,255,255,0.8);">Explore
-                    a curated selection of our favourite moments—from hand-poured espressos to sun-drenched island
-                    light.</p>
+        <section class="section subpage-header reveal">
+            <div class="container">
+                <span class="subtitle">A Visual Journey</span>
+                <h1>Views of <span style="color: var(--soft-gold); font-style: italic;">Santorini</span></h1>
+                <p>Explore a curated selection of our favourite moments—from hand-poured espressos to sun-drenched island light.</p>
             </div>
         </section>
 
-        <section class="section reveal"
-            style="background: linear-gradient(180deg, #fdfbf7 0%, #f9f9f9 100%);">
+        <section class="section reveal" style="background-color: #FAF8F5; padding-top: 3.5rem; padding-bottom: 6rem;">
             <div class="container">
-                <div class="grid-responsive">
-                    <div class="reveal gallery-item"
-                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12);">
-                        <img src="/coffee_item.png" alt="Signature Coffee"
-                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                <div class="gallery-grid">
+                    <div class="reveal gallery-item">
+                        <img src="/coffee_item.png" alt="Signature Greek Coffee" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Signature Freddo Espresso</span>
+                        </div>
                     </div>
-                    <div class="reveal gallery-item"
-                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.1s;">
-                        <img src="/food_item.png" alt="Traditional Mediterranean Food"
-                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    <div class="reveal gallery-item">
+                        <img src="/food_item.png" alt="Traditional Aegean Pasta" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Traditional Aegean Pasta</span>
+                        </div>
                     </div>
-                    <div class="reveal gallery-item"
-                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.2s;">
-                        <img src="/dessert_item.png" alt="Greek Dessert Baklava"
-                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    <div class="reveal gallery-item">
+                        <img src="/dessert_item.png" alt="Honey Baklava" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Honey Filo Baklava</span>
+                        </div>
                     </div>
-                    <div class="reveal gallery-item"
-                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.1s;">
-                        <img src="/src/assets/hero_bg.png" alt="Cafe Interior"
-                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    <div class="reveal gallery-item">
+                        <img src="/src/assets/hero_bg.png" alt="Santorini Atmosphere" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Santorini Terrace View</span>
+                        </div>
                     </div>
-                    <div class="reveal gallery-item"
-                        style="aspect-ratio: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); transition-delay: 0.2s;">
-                        <img src="/src/assets/about_roaster.png" alt="Barista pouring coffee"
-                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; display: block;">
+                    <div class="reveal gallery-item">
+                        <img src="/src/assets/about_roaster.png" alt="Master Roaster at Work" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Master Roaster at Work</span>
+                        </div>
+                    </div>
+                    <div class="reveal gallery-item">
+                        <img src="/food_item.png" alt="Classic Greek Salad" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Classic Greek Mezze</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -18,6 +18,7 @@
     <meta property="og:image" content="/src/assets/hero_bg.png">
     <meta name="twitter:card" content="summary_large_image">
     <title>Café Aroma | Authentic Greek Coffee & Mediterranean Dining ☕🌊</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/src/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,21 +37,20 @@
     <main>
         <!-- Enhanced Full-Screen Hero Section -->
         <section class="hero reveal"
-            style="background: linear-gradient(rgba(0, 40, 70, 0.75), rgba(0, 40, 70, 0.75)), url('/src/assets/hero_bg.png') center/cover; padding: var(--hero-pt) 0 var(--hero-pb) 0; min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
-            <div class="container hero-content" style="text-align: center; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+            style="background: linear-gradient(rgba(0, 30, 60, 0.55), rgba(0, 15, 35, 0.65)), url('/src/assets/hero_bg.png') center/cover; padding: clamp(6.5rem, 11vw, 9.5rem) 0 clamp(3.5rem, 6vw, 5.5rem) 0; min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+            <div class="container hero-content" style="text-align: center; margin: 0 auto; display: flex; flex-direction: column; align-items: center; max-width: 720px;">
                 <span class="hero-subtitle"
-                    style="display: block; font-weight: 700; letter-spacing: 3px; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.25rem; color: var(--soft-gold);">A
+                    style="display: block; font-weight: 600; letter-spacing: 3px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 1rem; color: var(--soft-gold);">A
                     Touch of Santorini</span>
-                <h1 class="serif hero-title" style="margin-bottom: 1.25rem; color: white;">The
-                    Heartbeat<br>Of The <span style="color: var(--soft-gold); font-style: italic;">Aegean</span></h1>
-                <p style="font-size: var(--fs-body); max-width: 580px; margin-bottom: 2.25rem; font-weight: 300; opacity: 0.9; margin-left: auto; margin-right: auto;">A
+                <h1 class="serif hero-title" style="margin-bottom: 1.25rem; color: white; font-size: clamp(2.4rem, 5.5vw, 4.2rem) !important; line-height: 1.15; font-weight: 500; letter-spacing: 0.5px;">The Heartbeat<br>Of The <span style="color: var(--soft-gold); font-style: italic;">Aegean</span></h1>
+                <p style="font-size: 0.92rem; max-width: 520px; margin-bottom: 2rem; font-weight: 300; opacity: 0.9; margin-left: auto; margin-right: auto; line-height: 1.6;">A
                     sanctuary of Mediterranean flavors, where handcrafted coffee meets authentic conversations in a
                     breathtakingly serene atmosphere.</p>
-                <div class="hero-btns" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: center;">
-                    <a href="menu.html" class="btn btn-primary" style="padding: 0.85rem 2.25rem; border-radius: 4px;">Discover
+                <div class="hero-btns" style="display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; align-items: center;">
+                    <a href="menu.html" class="btn btn-primary" style="padding: 0.65rem 1.8rem; border-radius: 50px;">Discover
                         Menu</a>
                     <a href="book.html" class="btn btn-outline"
-                        style="color: white; border-color: white; padding: 0.85rem 2.25rem; border-radius: 4px;">Book a
+                        style="color: white; border-color: white; padding: 0.65rem 1.8rem; border-radius: 50px;">Book a
                         Table</a>
                 </div>
             </div>
@@ -156,21 +156,21 @@
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
-                <div class="reveal">
+                <div class="reveal" style="text-align: center; max-width: 620px; margin: 0 auto;">
                     <span class="subtitle"
-                        style="color: var(--aegean-blue); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">The
-                        Aromatic Craft</span>
-                    <h2 class="serif section-title" style="margin: 1rem 0 1.5rem;">Brewed With
-                        <br><span class="text-accent"
+                        style="color: var(--aegean-blue); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">The Aromatic Craft</span>
+                    <h2 class="serif section-title" style="margin: 1rem 0 1.5rem;">Brewed With <span class="text-accent"
                             style="color: var(--soft-gold); font-style: italic;">Passion.</span></h2>
                     <p style="margin-bottom: 1.5rem; color: var(--text-light); line-height: 1.8; font-size: var(--fs-body);">
                         Every cup poured at Café Aroma is a testament to the timeless art of Greek coffee. Our baristas
                         meticulously craft each beverage, ensuring the perfect balance of richness and foam.</p>
-                    <p style="margin-bottom: 2.5rem; color: var(--text-light); line-height: 1.8; font-size: var(--fs-body);">
+                    <p style="margin-bottom: 2.2rem; color: var(--text-light); line-height: 1.8; font-size: var(--fs-body);">
                         Whether you are indulging in a layered Freddo Espresso or pairing your coffee with our fresh
                         handmade baklava, we promise an escape to the islands within every sip.</p>
-                    <a href="about.html" class="btn btn-outline"
-                        style="border-radius: 4px; padding: 1rem 2.5rem; font-weight: 500;">Read Our Story</a>
+                    <div style="text-align: center;">
+                        <a href="about.html" class="btn btn-outline"
+                            style="border-radius: 4px; padding: 0.9rem 2.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Read Our Story</a>
+                    </div>
                 </div>
             </div>
         </section>

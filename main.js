@@ -1,3 +1,22 @@
+// Global UI Toast Helper
+export const showToast = (message) => {
+    let container = document.getElementById('toastContainer');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toastContainer';
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.innerHTML = `<span>${message}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => {
+        toast.classList.add('fade-out');
+        setTimeout(() => toast.remove(), 400);
+    }, 3800);
+};
+
 // Global UI Components
 const initHeader = () => {
     const header = document.querySelector('header');
@@ -17,14 +36,22 @@ const initHeader = () => {
         <nav>
             <div class="logo">Café Aroma</div>
             <ul class="nav-links" id="navLinks">
+                <li class="mobile-drawer-header">
+                    <span class="mobile-drawer-ornament">✦ ~ Café Aroma Santorini ~ ✦</span>
+                </li>
                 <li><a href="index.html" class="${currentPath === 'index.html' ? 'active' : ''}">Home</a></li>
-                <li><a href="about.html" class="${currentPath === 'about.html' ? 'active' : ''}">About</a></li>
-                <li><a href="menu.html" class="${currentPath === 'menu.html' ? 'active' : ''}">Menu</a></li>
+                <li><a href="about.html" class="${currentPath === 'about.html' ? 'active' : ''}">Our Story</a></li>
+                <li><a href="menu.html" class="${currentPath === 'menu.html' ? 'active' : ''}">Full Menu</a></li>
                 <li><a href="gallery.html" class="${currentPath === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
-                <li><a href="contact.html" class="${currentPath === 'contact.html' ? 'active' : ''}">Contact</a></li>
+                <li><a href="contact.html" class="${currentPath === 'contact.html' ? 'active' : ''}">Contact Us</a></li>
+                <li class="mobile-book-li"><a href="book.html" class="btn btn-primary nav-mobile-book-btn">Book a Table</a></li>
+                <li class="mobile-drawer-footer">
+                    <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>123 Santorini Street, Downtown</p>
+                    <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Mon - Sun: 7:00 AM – 11:00 PM</p>
+                </li>
             </ul>
             <div class="header-btns">
-                <a href="book.html" class="btn btn-primary">Book Table</a>
+                <a href="book.html" class="btn btn-primary desktop-book-btn">Book Table</a>
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
                     <span></span>
                     <span></span>
@@ -135,7 +162,7 @@ const initFooter = () => {
         <div class="footer-grid">
             <div class="footer-section">
                 <h3 class="footer-logo">Café Aroma</h3>
-                <p style="color: var(--text-light); max-width: 280px; font-size: 0.85rem; line-height: 1.5;">A sanctuary of Mediterranean flavors and Santorini vibes. Join us for a journey of handcrafted coffee and authentic meals.</p>
+                <p class="footer-description">A sanctuary of Mediterranean flavors and Santorini vibes. Join us for a journey of handcrafted coffee and authentic meals.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon">IG</a>
                     <a href="#" class="social-icon">FB</a>
@@ -163,10 +190,10 @@ const initFooter = () => {
             </div>
             <div class="footer-section">
                 <h4>Newsletter</h4>
-                <p style="font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.6rem;">Join our community for exclusive offers and events.</p>
-                <form id="newsletterForm" style="display: flex; gap: 0.4rem;">
-                    <input type="email" placeholder="Email Address" required style="flex: 1; padding: 0.45rem 0.6rem; font-size: 0.82rem; border: 1px solid #ddd; border-radius: 4px;">
-                    <button type="submit" class="btn btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.75rem;">JOIN</button>
+                <p class="newsletter-desc">Join our community for exclusive offers and events.</p>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Email Address" required class="newsletter-input">
+                    <button type="submit" class="newsletter-btn">JOIN</button>
                 </form>
             </div>
         </div>
@@ -181,7 +208,7 @@ const initFooter = () => {
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you for joining our newsletter! Welcome to the Café Aroma family.');
+            showToast('✨ Thank you for joining our newsletter! Welcome to the Café Aroma family.');
             newsletterForm.reset();
         });
     }
@@ -251,33 +278,88 @@ const renderMenu = (filter = 'Coffee', query = '') => {
 
     if (filteredItems.length === 0) {
         menuContent.innerHTML = `
-            <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
-                <h3 class="serif">No dishes found matching "${query}"</h3>
-                <p>Try searching for something else or browse another category.</p>
+            <div class="booklet-container" style="text-align: center; padding: 4rem 2rem;">
+                <span class="booklet-ornament">✦ Search Results ✦</span>
+                <h3 class="serif" style="margin-top: 0.5rem; color: #1A1A1A;">No items found matching "${query}"</h3>
+                <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Try searching for another specialty or select a category tab above.</p>
             </div>
         `;
         return;
     }
 
-    menuContent.innerHTML = `
-        <div class="menu-grid">
-            ${filteredItems.map(item => `
-                <div class="menu-card">
-                    <div>
-                        <div class="menu-card-header">
-                            <h3>${item.name}</h3>
-                            <div class="dots"></div>
-                            <span class="menu-card-price">$${item.price.toFixed(2)}</span>
-                        </div>
-                        <p class="menu-card-desc">${item.desc}</p>
-                    </div>
-                    <div class="menu-card-footer">
-                        ${item.tags.map(tag => `<span class="badge" style="background-color: ${tag === 'Bestseller' ? 'var(--aegean-blue)' : 'var(--soft-gold)'}">${tag}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('')}
+    // Helper to render an item row inside booklet
+    const renderBookletItem = (item) => `
+        <div class="booklet-item">
+            <div class="booklet-item-header">
+                <span class="booklet-item-title">${item.name}
+                    ${item.tags.map(t => `<span class="booklet-badge" style="background-color: ${t === 'Bestseller' ? '#005EA6' : '#C5A059'}; color: white;">${t}</span>`).join('')}
+                </span>
+                <div class="booklet-dots"></div>
+                <span class="booklet-item-price">$${item.price.toFixed(2)}</span>
+            </div>
+            <p class="booklet-item-desc">${item.desc}</p>
         </div>
     `;
+
+    // Render single category booklet view or full booklet view
+    if (filter !== 'All' && !query) {
+        const half = Math.ceil(filteredItems.length / 2);
+        const col1 = filteredItems.slice(0, half);
+        const col2 = filteredItems.slice(half);
+
+        menuContent.innerHTML = `
+            <div class="booklet-container reveal active">
+                <div class="booklet-header">
+                    <span class="booklet-ornament">✦ ~ Café Aroma Santorini ~ ✦</span>
+                    <h2 class="booklet-chapter-title">${filter} Menu Selection</h2>
+                </div>
+                <div class="booklet-page-grid">
+                    <div class="booklet-page-column">
+                        ${col1.map(renderBookletItem).join('')}
+                    </div>
+                    <div class="booklet-page-column">
+                        ${col2.map(renderBookletItem).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    } else {
+        // Full Booklet grouped by category
+        const categories = ["Coffee", "Beverages", "Food", "Desserts"];
+        const visibleCategories = filter === 'All' ? categories : Array.from(new Set(filteredItems.map(i => i.category)));
+
+        menuContent.innerHTML = `
+            <div class="booklet-container reveal active">
+                <div class="booklet-header" style="margin-bottom: 3rem;">
+                    <span class="booklet-ornament">✦ ~ The Complete Booklet ~ ✦</span>
+                    <h2 class="booklet-chapter-title">Aegean Culinary Menu</h2>
+                </div>
+                ${visibleCategories.map((cat, idx) => {
+                    const catItems = filteredItems.filter(i => i.category === cat);
+                    if (catItems.length === 0) return '';
+                    const half = Math.ceil(catItems.length / 2);
+                    const col1 = catItems.slice(0, half);
+                    const col2 = catItems.slice(half);
+                    return `
+                        <div style="margin-bottom: 3.5rem;">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                                <span style="font-size: 0.75rem; letter-spacing: 3px; color: #C5A059; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 0.3rem;">✦ Chapter 0${idx + 1} ✦</span>
+                                <h3 class="serif" style="font-size: 1.5rem; color: #1A1A1A;">${cat}</h3>
+                            </div>
+                            <div class="booklet-page-grid">
+                                <div class="booklet-page-column">
+                                    ${col1.map(renderBookletItem).join('')}
+                                </div>
+                                <div class="booklet-page-column">
+                                    ${col2.map(renderBookletItem).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        `;
+    }
 };
 
 // Initialize everything
@@ -327,6 +409,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('✉️ Thank you! Your message has been sent to Café Aroma.');
+            contactForm.reset();
+        });
+    }
+
     const reservationForm = document.getElementById('reservationForm');
     const bookingSlipContainer = document.getElementById('booking-slip-container');
     const dateInput = document.getElementById('date');
@@ -353,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="booking-slip">
                     <div class="slip-header">
                         <h3 class="serif">Booking Confirmed</h3>
-                        <p>ID: ${bookingId}</p>
+                        <p>ID: <strong id="slipBookingId">${bookingId}</strong></p>
                     </div>
                     <div class="slip-body">
                         <div class="slip-row">
@@ -378,18 +470,34 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="slip-footer">
-                        <p>Please present this slip upon arrival.</p>
-                        <div class="slip-qr">Scan at Concierge | Café Aroma Santorini</div>
-                        <button class="print-btn" onclick="window.print()">Print Slip</button>
-                        <button class="btn btn-outline" style="margin-top: 1rem; width: 100%;" onclick="location.reload()">Book Another</button>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.85rem; color: #555;">Please present this slip upon arrival.</p>
+                        <div class="slip-qr" style="margin-bottom: 1.25rem;">Scan at Concierge | Café Aroma Santorini</div>
+                        <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                            <button class="print-btn" id="copyCodeBtn" style="background: white; border: 1.5px solid var(--aegean-blue); color: var(--aegean-blue); margin-top: 0;">Copy Code</button>
+                            <button class="print-btn" style="margin-top: 0;" onclick="window.print()">Print Slip</button>
+                        </div>
+                        <button class="btn btn-outline" style="margin-top: 1rem; width: 100%; border-radius: 6px;" onclick="location.reload()">Book Another</button>
                     </div>
                 </div>
             `;
 
-            // Transition
+            // Copy Code Listener
+            const copyCodeBtn = document.getElementById('copyCodeBtn');
+            if (copyCodeBtn) {
+                copyCodeBtn.addEventListener('click', () => {
+                    navigator.clipboard.writeText(bookingId).then(() => {
+                        showToast(`📋 Confirmation code ${bookingId} copied to clipboard!`);
+                    }).catch(() => {
+                        showToast(`📋 Confirmation ID: ${bookingId}`);
+                    });
+                });
+            }
+
+            // Transition & Toast
             reservationForm.style.display = 'none';
             bookingSlipContainer.style.display = 'block';
             bookingSlipContainer.scrollIntoView({ behavior: 'smooth' });
+            showToast('🎉 Reservation confirmed! Your digital slip is ready.');
         });
     }
 
